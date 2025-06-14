@@ -63,13 +63,42 @@ nav {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
-    padding: 120px 0 80px;
-    text-align: center;
+    padding: 120px 0;
     min-height: 100vh;
     display: flex;
     align-items: center;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    width: 100%;
+}
+
+.hero-text {
+    flex: 1;
+    text-align: left;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: center;
+}
+
+.hero-product-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.hero-product-image:hover {
+    transform: scale(1.05);
 }
 
 .hero h2 {
@@ -182,7 +211,33 @@ section {
 
 /* Overview Section */
 .overview {
-    background: #f8f9fa;
+    padding: 80px 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.product-image:hover {
+    transform: scale(1.05);
+}
+
+.innovation-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.innovation-img:hover {
+    transform: scale(1.02);
 }
 
 .overview-content {
@@ -342,11 +397,40 @@ section {
     margin-bottom: 2rem;
 }
 
+.hardware-section {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-top: 40px;
+}
+
+.hardware-content {
+    flex: 1;
+}
+
+.hardware-image {
+    flex: 1;
+    text-align: center;
+}
+
+.wearing-scene-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.wearing-scene-image:hover {
+    transform: scale(1.03);
+}
+
 .hardware-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
+    gap: 30px;
+    margin-top: 20px;
 }
 
 .hardware-item {
@@ -722,6 +806,29 @@ footer {
         z-index: 999;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         gap: 1rem;
+    }
+    
+    .hero-content {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .hero-text {
+        text-align: center;
+    }
+    
+    .hero-product-image {
+        max-width: 350px;
+    }
+    
+    .hardware-section {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .wearing-scene-image {
+        max-width: 300px;
     }
     
     .nav-links.active {

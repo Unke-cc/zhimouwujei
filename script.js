@@ -156,18 +156,15 @@ function clearValidation(e) {
 
 // 移动端菜单
 function initMobileMenu() {
-    // 创建移动端菜单按钮
     const nav = document.querySelector('nav');
     const navLinks = document.querySelector('.nav-links');
+    const menuToggle = document.querySelector('.menu-toggle');
     
-    // 创建汉堡菜单按钮
-    const menuToggle = document.createElement('button');
-    menuToggle.className = 'menu-toggle';
-    menuToggle.innerHTML = '☰';
-    menuToggle.setAttribute('aria-label', '切换菜单');
-    menuToggle.setAttribute('aria-expanded', 'false');
-    
-    nav.appendChild(menuToggle);
+    // 检查元素是否存在
+    if (!nav || !navLinks || !menuToggle) {
+        console.error('移动端菜单初始化失败：找不到必要的DOM元素');
+        return;
+    }
     
     // 菜单切换功能
     menuToggle.addEventListener('click', function() {
