@@ -164,61 +164,66 @@ function initMobileMenu() {
     const menuToggle = document.createElement('button');
     menuToggle.className = 'menu-toggle';
     menuToggle.innerHTML = '☰';
-    menuToggle.setAttribute('aria-label', '菜单');
-    
-    // 添加样式
-    menuToggle.style.cssText = `
-        display: none;
-        background: none;
-        border: none;
-        color: white;
-        font-size: 1.5rem;
-        cursor: pointer;
-        padding: 0.5rem;
-    `;
+    menuToggle.setAttribute('aria-label', '切换菜单');
+    menuToggle.setAttribute('aria-expanded', 'false');
     
     nav.appendChild(menuToggle);
     
-    // 移动端显示菜单按钮
-    const mediaQuery = window.matchMedia('(max-width: 768px)');
-    
-    function handleMediaQuery(e) {
-        if (e.matches) {
-            menuToggle.style.display = 'block';
-            navLinks.style.cssText = `
-                position: fixed;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: rgba(102, 126, 234, 0.95);
-                backdrop-filter: blur(10px);
-                flex-direction: column;
-                padding: 2rem;
-                transform: translateY(-100%);
-                transition: transform 0.3s ease;
-                z-index: 999;
-            `;
-        } else {
-            menuToggle.style.display = 'none';
-            navLinks.style.cssText = '';
-        }
-    }
-    
-    mediaQuery.addListener(handleMediaQuery);
-    handleMediaQuery(mediaQuery);
-    
     // 菜单切换功能
     menuToggle.addEventListener('click', function() {
-        const isOpen = navLinks.style.transform === 'translateY(0px)';
-        navLinks.style.transform = isOpen ? 'translateY(-100%)' : 'translateY(0px)';
-        menuToggle.innerHTML = isOpen ? '☰' : '✕';
+        const isOpen = navLinks.classList.contains('active');
+        
+        if (isOpen) {
+            navLinks.classList.remove('active');
+            menuToggle.innerHTML = '☰';
+            menuToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = ''; // 恢复页面滚动
+        } else {
+            navLinks.classList.add('active');
+            menuToggle.innerHTML = '✕';
+            menuToggle.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden'; // 防止背景滚动
+        }
     });
     
     // 点击菜单项后关闭菜单
     navLinks.addEventListener('click', function(e) {
         if (e.target.tagName === 'A') {
-            navLinks.style.transform = 'translateY(-100%)';
+            navLinks.classList.remove('active');
             menuToggle.innerHTML = '☰';
+            menuToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = ''; // 恢复页面滚动
+        }
+    });
+    
+    // 点击菜单外部关闭菜单
+    document.addEventListener('click', function(e) {
+        if (!nav.contains(e.target) && navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            menuToggle.innerHTML = '☰';
+            menuToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = ''; // 恢复页面滚动
+        }
+    });
+    
+    // ESC键关闭菜单
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            menuToggle.innerHTML = '☰';
+            menuToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = ''; // 恢复页面滚动
+            menuToggle.focus(); // 返回焦点到按钮
+        }
+    });
+    
+    // 窗口大小改变时重置菜单状态
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            menuToggle.innerHTML = '☰';
+            menuToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = ''; // 恢复页面滚动
         }
     });
 }
