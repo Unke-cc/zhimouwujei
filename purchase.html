@@ -13,25 +13,23 @@
 </head>
 <body>
     <!-- Header -->
-    <header class="header">
-        <nav class="nav">
-            <div class="nav-brand">
-                <a href="index.html" class="logo">云客科技</a>
-            </div>
-            <div class="nav-menu">
-                <a href="index.html#overview" class="nav-link">项目概述</a>
-                <a href="index.html#background" class="nav-link">项目背景</a>
-                <a href="index.html#features" class="nav-link">核心功能</a>
-                <a href="index.html#technology" class="nav-link">技术创新</a>
-                <a href="index.html#contact" class="nav-link">联系我们</a>
-                <a href="purchase.html" class="nav-link active">立即购买</a>
-            </div>
-            <div class="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">云客科技</a>
+            <button class="menu-toggle" aria-label="切换菜单" aria-expanded="false">
+                ☰
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html#home">首页</a></li>
+                <li><a href="index.html#overview">项目概述</a></li>
+                <li><a href="index.html#background">项目背景</a></li>
+                <li><a href="index.html#features">核心功能</a></li>
+                <li><a href="index.html#technology">技术创新</a></li>
+                <li><a href="purchase.html" class="active">立即购买</a></li>
+                <li><a href="index.html#contact">联系我们</a></li>
+            </ul>
         </nav>
+        <div class="menu-overlay"></div>
     </header>
 
     <!-- Purchase Hero Section -->
@@ -55,7 +53,7 @@
             <div class="purchase-content">
                 <div class="product-showcase">
                     <div class="product-image">
-                        <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'><defs><linearGradient id='grad1' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' style='stop-color:%23007aff;stop-opacity:1' /><stop offset='100%' style='stop-color:%235856d6;stop-opacity:1' /></linearGradient></defs><rect width='400' height='300' fill='%23f8f9fa' rx='20'/><rect x='50' y='80' width='300' height='140' fill='url(%23grad1)' rx='15'/><circle cx='120' cy='120' r='15' fill='white' opacity='0.9'/><circle cx='280' cy='120' r='15' fill='white' opacity='0.9'/><rect x='180' y='110' width='40' height='20' fill='white' opacity='0.8' rx='3'/><text x='200' y='200' text-anchor='middle' font-size='16' fill='%23333' font-family='Arial'>智眸1.0</text><text x='200' y='220' text-anchor='middle' font-size='12' fill='%23666' font-family='Arial'>AI智能眼镜</text></svg>" alt="智眸1.0智能眼镜" class="showcase-image">
+                        <img src="image/产品展示图片.png" alt="智眸1.0智能眼镜" class="showcase-image">
                     </div>
                     
                     <div class="product-highlights">
@@ -114,11 +112,10 @@
                         <h4>产品规格</h4>
                         <ul>
                             <li>重量：仅45g，轻盈佩戴</li>
-                            <li>显示：高清OLED微显示屏</li>
                             <li>处理器：专用AI芯片</li>
                             <li>存储：64GB本地存储</li>
                             <li>防护：IP67防水防尘</li>
-                            <li>材质：钛合金框架</li>
+                            <li>材质：轻量化高分子聚合物</li>
                         </ul>
                     </div>
                     
@@ -170,11 +167,7 @@
                 <div class="info-card">
                     <h4>💳 支付方式</h4>
                     <ul>
-                        <li>支付宝扫码支付（推荐）</li>
-                        <li>微信支付扫码支付</li>
-                        <li>银行卡在线安全支付</li>
-                        <li>企业对公转账，开具发票</li>
-                        <li>花呗、京东白条分期付款</li>
+                        <li>支付宝扫码支付</li>
                     </ul>
                 </div>
             </div>
@@ -274,20 +267,14 @@
     </div>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h3>云客科技</h3>
-                    <p>智眸无界，点亮视界<br>科技赋能，助您前行</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link">微信</a>
-                        <a href="#" class="social-link">微博</a>
-                        <a href="#" class="social-link">LinkedIn</a>
-                    </div>
+                <div class="footer-info">
+                    <h4>云客科技</h4>
+                    <p>点亮视界，科技赋能，助您自由前行</p>
                 </div>
-                
-                <div class="footer-section">
+                <div class="footer-links">
                     <h4>快速链接</h4>
                     <ul>
                         <li><a href="index.html#overview">项目概述</a></li>
@@ -297,19 +284,19 @@
                         <li><a href="purchase.html">立即购买</a></li>
                     </ul>
                 </div>
-                
-                <div class="footer-section">
+                <div class="footer-contact">
                     <h4>联系方式</h4>
-                    <div class="contact-info">
-                        <p>📧 contact@yunke.tech</p>
-                        <p>📞 400-888-9999</p>
-                        <p>📍 北京市海淀区中关村科技园</p>
-                    </div>
+                    <p>📧 wenkai5@foxmail.com</p>
+                    <p>📱 +86 16645425205</p>
                 </div>
             </div>
-            
             <div class="footer-bottom">
-                <p>&copy; 2024 云客科技. 保留所有权利.</p>
+                <p>&copy; 2024 云客科技团队. 保留所有权利。</p>
+                <div class="social-links">
+                    <a href="#" aria-label="邮箱">📧</a>
+                    <a href="#" aria-label="微信">💬</a>
+                    <a href="#" aria-label="微博">🌐</a>
+                </div>
             </div>
         </div>
     </footer>
