@@ -92,8 +92,8 @@ nav {
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
     color: #1d1d1f;
-    padding: 120px 0;
-    min-height: 100vh;
+    padding: 80px 0 60px;
+    min-height: 60vh;
     display: flex;
     align-items: center;
     position: relative;
@@ -145,25 +145,27 @@ nav {
 
 .hero h2 {
     font-size: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
     opacity: 0.9;
     animation: fadeInUp 1s ease-out 0.1s both;
 }
 
 .hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
+    font-size: 3.2rem;
+    margin-bottom: 0.8rem;
     animation: fadeInUp 1s ease-out;
+    line-height: 1.1;
 }
 
 .hero p {
-    font-size: 1.3rem;
-    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
     opacity: 0.9;
     animation: fadeInUp 1s ease-out 0.2s both;
-    max-width: 600px;
+    max-width: 550px;
     margin-left: auto;
     margin-right: auto;
+    line-height: 1.5;
 }
 
 .cta-button {
@@ -1085,8 +1087,8 @@ footer {
     }
 
     .hero {
-        padding: 100px 0 60px;
-        min-height: 80vh;
+        padding: 80px 0 50px;
+        min-height: 50vh;
     }
 
     .hero h1 {
@@ -1158,6 +1160,11 @@ footer {
 @media (max-width: 480px) {
     .container {
         padding: 0 15px;
+    }
+
+    .hero {
+        padding: 70px 0 40px;
+        min-height: 45vh;
     }
 
     .hero h1 {
