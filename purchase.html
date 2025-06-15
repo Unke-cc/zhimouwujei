@@ -178,38 +178,10 @@
     <div id="paymentModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>选择支付方式</h3>
+                <h3>支付宝扫码支付</h3>
                 <span class="close" onclick="closePaymentModal()">&times;</span>
             </div>
             <div class="modal-body">
-                <div class="payment-options">
-                    <div class="payment-option active" onclick="selectPayment('alipay')">
-                        <div class="payment-icon">💙</div>
-                        <div class="payment-info">
-                            <h4>支付宝支付</h4>
-                            <p>推荐使用，安全便捷</p>
-                        </div>
-                        <div class="payment-check">✓</div>
-                    </div>
-                    
-                    <div class="payment-option" onclick="selectPayment('wechat')">
-                        <div class="payment-icon">💚</div>
-                        <div class="payment-info">
-                            <h4>微信支付</h4>
-                            <p>微信扫码支付</p>
-                        </div>
-                        <div class="payment-check">✓</div>
-                    </div>
-                    
-                    <div class="payment-option" onclick="selectPayment('bank')">
-                        <div class="payment-icon">🏦</div>
-                        <div class="payment-info">
-                            <h4>银行卡支付</h4>
-                            <p>支持各大银行卡</p>
-                        </div>
-                        <div class="payment-check">✓</div>
-                    </div>
-                </div>
                 
                 <div class="payment-qr" id="paymentQR">
                     <div class="qr-container">
@@ -314,18 +286,7 @@
             document.body.style.overflow = 'auto';
         }
         
-        function selectPayment(type) {
-            const options = document.querySelectorAll('.payment-option');
-            options.forEach(option => option.classList.remove('active'));
-            event.currentTarget.classList.add('active');
-            
-            const qrContainer = document.getElementById('paymentQR');
-            if (type === 'alipay') {
-                qrContainer.style.display = 'block';
-            } else {
-                qrContainer.style.display = 'none';
-            }
-        }
+        // QR code is always visible for Alipay payment
         
         function confirmPayment() {
             alert('支付功能正在开发中，请联系客服完成购买！');
