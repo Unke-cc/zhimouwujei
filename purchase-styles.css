@@ -1,3 +1,37 @@
+/* Navigation Styles for Purchase Page */
+.nav-links a {
+    color: #1d1d1f;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 400;
+    padding: 8px 16px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.nav-links a:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: #007aff;
+}
+
+/* 强调立即购买按钮 */
+.nav-links a[href="purchase.html"],
+.nav-links a.active {
+    background: linear-gradient(135deg, #007aff 0%, #5856d6 100%);
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0, 122, 255, 0.3);
+    transform: translateY(-1px);
+}
+
+.nav-links a[href="purchase.html"]:hover,
+.nav-links a.active:hover {
+    background: linear-gradient(135deg, #0056cc 0%, #4a47b8 100%);
+    color: white;
+    box-shadow: 0 6px 20px rgba(0, 122, 255, 0.4);
+    transform: translateY(-2px);
+}
+
 /* Purchase Hero Section */
 .purchase-hero {
     background: linear-gradient(135deg, #007aff 0%, #5856d6 100%);
@@ -647,6 +681,24 @@
 .form-group textarea:focus {
     outline: none;
     border-color: #007aff;
+}
+
+/* Footer Purchase Link Emphasis */
+.footer-links a[href="purchase.html"] {
+    background: linear-gradient(135deg, #007aff 0%, #5856d6 100%);
+    color: white;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 122, 255, 0.3);
+    display: inline-block;
+}
+
+.footer-links a[href="purchase.html"]:hover {
+    background: linear-gradient(135deg, #0056cc 0%, #4a47b8 100%);
+    color: white;
+    box-shadow: 0 6px 20px rgba(0, 122, 255, 0.4);
+    transform: translateX(0) translateY(-2px);
 }
 
 /* Modal Buttons */

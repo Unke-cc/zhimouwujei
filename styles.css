@@ -86,6 +86,22 @@ nav {
     color: #007aff;
 }
 
+/* 强调立即购买按钮 */
+.nav-links a[href="purchase.html"] {
+    background: linear-gradient(135deg, #007aff 0%, #5856d6 100%);
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0, 122, 255, 0.3);
+    transform: translateY(-1px);
+}
+
+.nav-links a[href="purchase.html"]:hover {
+    background: linear-gradient(135deg, #0056cc 0%, #4a47b8 100%);
+    color: white;
+    box-shadow: 0 6px 20px rgba(0, 122, 255, 0.4);
+    transform: translateY(-2px);
+}
+
 /* Hero Section */
 .hero {
     background: linear-gradient(135deg, rgba(0, 122, 255, 0.1) 0%, rgba(88, 86, 214, 0.1) 100%);
@@ -879,6 +895,24 @@ footer {
 .footer-links a:hover {
     color: #007aff;
     transform: translateX(4px);
+}
+
+/* 强调页脚立即购买链接 */
+.footer-links a[href="purchase.html"] {
+    background: linear-gradient(135deg, #007aff 0%, #5856d6 100%);
+    color: white;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 122, 255, 0.3);
+    display: inline-block;
+}
+
+.footer-links a[href="purchase.html"]:hover {
+    background: linear-gradient(135deg, #0056cc 0%, #4a47b8 100%);
+    color: white;
+    box-shadow: 0 6px 20px rgba(0, 122, 255, 0.4);
+    transform: translateX(0) translateY(-2px);
 }
 
 .footer-contact p {
