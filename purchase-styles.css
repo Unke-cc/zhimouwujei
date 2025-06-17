@@ -32,6 +32,25 @@
     transform: translateY(-2px);
 }
 
+/* 移动端适配 */
+@media (max-width: 768px) {
+    /* 隐藏菜单中的购买链接 */
+    .nav-links a[href="purchase.html"],
+    .nav-links a.active {
+        display: none;
+    }
+    
+    .nav-links {
+        padding-top: calc(env(safe-area-inset-top, 0px) + 80px);
+    }
+}
+
+@media (max-width: 480px) {
+    .purchase-hero {
+        padding-top: calc(env(safe-area-inset-top, 0px) + 120px);
+    }
+}
+
 /* Purchase Hero Section */
 .purchase-hero {
     background: linear-gradient(135deg, #007aff 0%, #5856d6 100%);
